@@ -111,11 +111,6 @@ function ext_buffer_pack(_buffer, _value, _type = undefined)
 	// Forced type cast (used for typed arrays|structs and buffers)
 	else if (!is_undefined(_type))
 	{
-		if (is_undefined(_value)) {
-	        buffer_write(_buffer, buffer_u8, BUFFER_UNDEFINED);
-	        return;
-	    }
-
 		buffer_write(_buffer, buffer_u8, _type);
 	
 		// Encode buffer as <<type><size><address>>
